@@ -1,0 +1,54 @@
+{% load static %}
+
+{% load el_pagination_tags %}
+
+{% lazy_paginate 10 all_Order_notifications %}
+
+
+<table id="productorder" class="table table-hover no-wrap product-order dataTable no-footer" data-page-size="10" role="grid" aria-describedby="productorder_info">
+    <thead>
+    </thead>
+    <tbody>
+{% if all_Order_notifications %}
+{% for i in all_Order_notifications %}
+
+    <tr role="row" class="odd" id="row_prod397e5db6-947e-40fc-8abd-39487ca46272">
+
+             <td>{{i.Notification_order}}</td>
+             <td>{{i.Notification_text}}</td>
+             <td>{{i.Notification_time}}</td>
+            <td><a href="{% url 'dashboard_customer_order_edit' i.Notification_order.id %}" class="btn btn-success"><i class="ti-marker-alt"></i></a></td>
+    </tr>
+
+{% endfor %}
+
+{% else %}
+<tr>
+<td  style="color:red" colspan="6">
+<h3>NO MATCH FOUND</h3>
+
+</td>
+
+</tr>
+
+{% endif %}
+
+    </tbody>
+</table>
+
+
+
+{% show_more "More results" %}
+
+
+
+
+
+
+
+
+
+
+
+
+

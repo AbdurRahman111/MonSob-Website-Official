@@ -1,0 +1,28 @@
+# Ignore env files
+env
+env2
+
+#ignore .env file in the dashboard_1 folder
+dashboard_1/.env
+
+
+### Django ###
+*.log
+*.pot
+*.pyc
+__pycache__/
+local_settings.py
+db.sqlite3
+db.sqlite3-journal
+media
+logs/*
+
+
+# Ignore database migrations
+**/migrations/
+**/migrations/*.pyc
+**/migrations/*.py
+
+
+# staticfiles
+staticfiles
