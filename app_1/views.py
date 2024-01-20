@@ -10,6 +10,7 @@ MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
 
+from .analysis_oders import get_daily_totals, get_weekly_totals, get_monthly_totals
 
 
 from .forms import add_category, add_Subcategory_1, add_product_alements, edit_product_field, add_Subcategory_2, add_brand, edit_order_detail, edit_Customer_delivery_info, form_Flash_Sell_add
@@ -947,6 +948,7 @@ def dashboard_order_filter_campaign(request):
     
 
 
+
 def deshboard_index(request):
     # print()
     staff_admin = request.session.get('deshboard_admin_username')
@@ -1008,7 +1010,22 @@ def deshboard_index(request):
     all_vendor_get = vendor_registration_table.objects.all().count()
 
 
+    try:
+        daily_totals = get_daily_totals()
+        weekly_totals = get_weekly_totals()
+        monthly_totals = get_monthly_totals()
+    except Exception as e:
+        daily_totals = None
+        weekly_totals = None
+        monthly_totals = None
+
+
+
     contex = {
+        'daily_totals':daily_totals,
+        'weekly_totals':weekly_totals,
+        'monthly_totals':monthly_totals,
+
         'user_name_for_dashboard':user_name_for_dashboard,
         'types_of_role':types_of_role,
         'Prioraty_rol':Prioraty_rol,

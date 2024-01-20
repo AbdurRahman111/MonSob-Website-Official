@@ -94,6 +94,10 @@ class Order_Table(models.Model):
     Order_Note = models.TextField(blank=True, null=True)
     Thanked = models.BooleanField(default=False)
 
+    # new fields
+    created = models.DateTimeField(auto_now_add=True)
+    updated = models.DateTimeField(auto_now=True)
+
     def __str__(self):
         return self.Order_Id
 
