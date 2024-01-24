@@ -12,11 +12,7 @@ dashboard_1/.env
 *.pyc
 __pycache__/
 local_settings.py
-db.sqlite3
-db.sqlite3-journal
-*.sqlite3
 
-media
 logs/*
 
 
