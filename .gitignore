@@ -5,6 +5,11 @@ env2
 #ignore .env file in the dashboard_1 folder
 dashboard_1/.env
 
+#media
+media
+
+db.sqlite3
+*.sqlite3
 
 ### Django ###
 *.log
