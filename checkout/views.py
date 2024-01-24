@@ -100,7 +100,7 @@ def get_last_oder_ID(request):
             last_ordr_id = i.Order_Id
             new_order_id = int(last_ordr_id) + 1
     else:
-        new_order_id = 30000
+        new_order_id = 10000
 
     print('monna id')
     print(new_order_id)
@@ -306,7 +306,7 @@ def order_save_with_all_info(request):
                 last_ordr_id = i.Order_Id
                 new_order_id = int(last_ordr_id) + 1
         else:
-            new_order_id = 30000
+            new_order_id = 10000
 
         var_Order_Table = Order_Table(Customer=authinticated_user, Customer_delivery_information=var_customer_info, Order_Id=new_order_id, SubTotal_Price=get_grand_total2, Delivery_Charge=vshow_delivery_charge2, GrandTotal_Price=vshow_subtotalss2, Partial_Price=partial_payment_price , Due_price=due_price , Order_Status='Pending payment', Payment_Type=input_payment_type2, Shopping=order_delivery_place_t, Payment_method=order_delivery_option, Campaign_Status=varorder_cam_or_reguler_status, Order_Campaign=get_campgn, Order_Note=name_odr_note_txtara2)
 
