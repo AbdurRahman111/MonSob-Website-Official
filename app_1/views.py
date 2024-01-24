@@ -9,7 +9,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
 
 
-
+#monna
 from .analysis_oders import get_daily_totals, get_weekly_totals, get_monthly_totals
 
 
