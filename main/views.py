@@ -957,11 +957,9 @@ def Order_placed_successfully(request):
     if request.user.is_authenticated:
         customer = request.user
         old_cus_uniq_id = customer.old_customer_uniqe_id
-
         filter_cus_Ordr_Table_3 = Order_Table_3.objects.filter(old_unq_number=old_cus_uniq_id).order_by('old_order_date')
         filter_all_orders = Order_Table.objects.filter(Customer=customer).order_by('-Order_Id')
         form_Up_Deposit_slip = Upload_Deposit_slip()
-
         get_last_order = Order_Table.objects.filter(Customer=customer).last()
         try:
             if get_last_order.Thanked:
@@ -975,7 +973,9 @@ def Order_placed_successfully(request):
         context={'filter_all_orders':filter_all_orders, 'form_Up_Deposit_slip':form_Up_Deposit_slip, 'filter_cus_Ordr_Table_3':filter_cus_Ordr_Table_3, 'get_last_order':get_last_order}
         return render(request,'boomboom_user/Order_placed_successfully.html', context)
     else:
-        return render(request,'boomboom_user/Order_placed_successfully.html')
+        get_last_order = Order_Table.objects.last()
+        context = {'get_last_order': get_last_order}
+        return render(request,'boomboom_user/Order_placed_successfully.html', context)
 
 
 
