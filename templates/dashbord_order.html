@@ -11,8 +11,6 @@
 		<section class="content">
         
 			<!-- Content Header (Page header) -->
-
-
          <div class="row">
 			  <div class="col-12">
 			      <h3>Reguler Order</h3>
@@ -494,7 +492,7 @@
 
 									
 									<td>&#2547;{{i.GrandTotal_Price}}</td>
-									<td>{{i.Order_Time}}</td>
+									<td>{{i.created}}</td>
 									<td><span class="badge badge-pill badge-success">{{i.Order_Status}}</span></td>
 									<td>{% if i.Deposit_slip %}<img loading="lazy" src="/media/{{i.Deposit_slip}}" alt="slip" width="60">{% else %}None{% endif %}</td>
 									
