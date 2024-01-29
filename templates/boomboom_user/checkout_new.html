@@ -740,14 +740,15 @@ function show_invoice_card(){
             order_review_html = order_review_html +
                       `<input type="radio" checked="checked" name="bedStatus" id="allot" value="120" onchange="my_function('120')">
                       <label for="male">Outside Dhaka (Delivery: BDT 120)</label><br>`
-                      delivery_charge_var = 120;
+                      delivery_charge_var = 85;
         }
         else{
             order_review_html = order_review_html +
                       `<input type="radio" checked="checked" name="bedStatus" id="allot" value="60" onchange="my_function('60')">
                       <label for="male">Inside Dhaka (Delivery: BDT 60)</label><br>`
-                      delivery_charge_var = 60;
+                      delivery_charge_var = 85;
         }
+
         order_review_html = order_review_html +
                       `<input type="radio" name="bedStatus" id="allot" value="0" onchange="my_function('0')" disabled>
                       <label for="female">Pickup From MonSob Office
@@ -867,12 +868,12 @@ function show_invoice_card(){
                                                     <td class="tg-baqh"></td>
                                                   <td class="tg-baqh" colspan="3"><h5>Delivery :</h5></td>
                                                   <td class="tg-baqh" style="text-align: right;">
-                                                  <h4>&#2547;<span id="gedelivery_charge${prod_type_spc}">0</span>
+                                                  <h4>&#2547;<span id="gedelivery_charge${prod_type_spc}">${delivery_charge_var}</span>
                                                   <input type="hidden" value="${delivry_free}" id="delivry_free${prod_type_spc}">
                                                   <span id="status_free${prod_type_spc}"></span></h4>
                                                   </td>
                                                 </tr>`
-                                grand_total_var = type_sub_total_price;
+                                grand_total_var = delivery_charge_var+type_sub_total_price;
                                 order_review_html = order_review_html + `<tr style="border-top: 1px solid black;">
                                                     <td class="tg-baqh"></td>
                                                   <td class="tg-baqh" colspan="3"><h4><b>Total :</b></h5></td>
